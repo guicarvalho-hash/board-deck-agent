@@ -1,6 +1,7 @@
 """
 AI-powered insight analyzer for extracting and categorizing meeting insights.
 """
+import json
 import os
 from typing import Dict, List
 from openai import OpenAI
@@ -81,7 +82,6 @@ If a category has no relevant items, return an empty array for that category.
                 response_format={"type": "json_object"}
             )
             
-            import json
             result = json.loads(response.choices[0].message.content)
             
             # Ensure all required keys exist
