@@ -7,8 +7,8 @@ A complete, production-ready system for automatically compiling meeting insights
 ## Project Statistics
 
 - **Python Code:** 1,009 lines across 5 modules
-- **Documentation:** 1,573 lines across 6 guides
-- **Total Project:** 2,582 lines
+- **Documentation:** 1,980 lines across 7 guides
+- **Total Project:** 2,989 lines
 - **Implementation Time:** Complete implementation from scratch
 
 ## Core Features Delivered
@@ -59,7 +59,7 @@ board-deck-agent/
 │   ├── insight_store.py     # Data management (176 lines)
 │   └── test_setup.py        # Setup verification (209 lines)
 │
-├── Documentation (1,573 lines Markdown)
+├── Documentation (1,980 lines Markdown)
 │   ├── README.md            # Project overview (217 lines)
 │   ├── SETUP.md             # Detailed setup guide (295 lines)
 │   ├── QUICKSTART.md        # Fast setup guide (199 lines)
@@ -360,10 +360,10 @@ Checks:
 | Category | Count | Lines | Description |
 |----------|-------|-------|-------------|
 | Python Modules | 5 | 1,009 | Core application code |
-| Documentation | 6 | 1,573 | Setup and usage guides |
+| Documentation | 7 | 1,980 | Setup and usage guides |
 | Config Files | 4 | - | .env, requirements, gitignore |
 | Deployment | 2 | - | Docker files |
-| **Total** | **17** | **2,582** | Complete system |
+| **Total** | **18** | **2,989** | Complete system |
 
 ## How to Get Started
 

@@ -125,7 +125,7 @@ To get this running immediately, you need to:
    - Authenticate with Google (one-time)
    - Agent is now ready!
 
-Total setup time: ~20 minutes
+Total setup time: ~30 minutes
 
 See [SETUP.md](SETUP.md) for detailed step-by-step instructions.
 
