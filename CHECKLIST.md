@@ -2,7 +2,7 @@
 
 This is your action plan to get the Board Deck Agent up and running immediately.
 
-## Time Required: ~20 Minutes
+## Time Required: ~30 Minutes
 
 ---
 

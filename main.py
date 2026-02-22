@@ -21,7 +21,9 @@ class BoardDeckAgent:
         load_dotenv()
         
         # Initialize components
-        self.email_monitor = EmailMonitor()
+        self.email_monitor = EmailMonitor(
+            days_to_check=int(os.getenv('EMAIL_DAYS_TO_CHECK', '7'))
+        )
         self.insight_analyzer = InsightAnalyzer(
             api_key=os.getenv('OPENAI_API_KEY')
         )

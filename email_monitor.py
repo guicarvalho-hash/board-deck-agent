@@ -21,10 +21,16 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly',
 class EmailMonitor:
     """Monitor Gmail inbox for meeting minutes."""
     
-    def __init__(self):
-        """Initialize the email monitor."""
+    def __init__(self, days_to_check: int = 7):
+        """
+        Initialize the email monitor.
+        
+        Args:
+            days_to_check: Number of days back to search for emails (default: 7)
+        """
         self.service = None
         self.last_processed_file = 'last_processed.txt'
+        self.days_to_check = days_to_check
         
     def authenticate(self) -> None:
         """Authenticate with Gmail API."""
@@ -164,7 +170,7 @@ class EmailMonitor:
         
         try:
             # Build query for recent unread messages
-            query = 'is:unread newer_than:7d'
+            query = f'is:unread newer_than:{self.days_to_check}d'
             
             # Get list of messages
             results = self.service.users().messages().list(
