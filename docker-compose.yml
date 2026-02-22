@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  board-deck-agent:
+    build: .
+    container_name: board-deck-agent
+    restart: unless-stopped
+    volumes:
+      # Mount configuration files
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.json:/app/token.json
+      - ./.env:/app/.env:ro
+      # Mount data directory for persistent storage
+      - ./data:/app/data
+    environment:
+      - DATA_FILE=/app/data/board_insights.json
+    command: python main.py --mode continuous
