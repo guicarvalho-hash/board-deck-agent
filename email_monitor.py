@@ -19,14 +19,26 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly',
 
 
 class EmailMonitor:
-    """Monitor Gmail inbox for meeting minutes."""
+    """
+    Monitor Gmail inbox for meeting minutes.
+    
+    Attributes:
+        service: Gmail API service instance
+        last_processed_file: File to track last processed email timestamp
+        days_to_check: Number of days to look back when searching for emails.
+                      Configurable via EMAIL_DAYS_TO_CHECK environment variable.
+                      Default is 7 days.
+    """
     
     def __init__(self, days_to_check: int = 7):
         """
         Initialize the email monitor.
         
         Args:
-            days_to_check: Number of days back to search for emails (default: 7)
+            days_to_check: Number of days back to search for emails (default: 7).
+                          This determines how far back the agent will look for
+                          unread emails containing meeting minutes. Configured
+                          via EMAIL_DAYS_TO_CHECK environment variable in main.py.
         """
         self.service = None
         self.last_processed_file = 'last_processed.txt'

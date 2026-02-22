@@ -66,8 +66,10 @@ If a category has no relevant items, return an empty array for that category.
 """
         
         try:
+            # Using gpt-4-turbo for consistent behavior and long-term stability
+            # Note: Can be configured via environment variable if needed
             response = self.client.chat.completions.create(
-                model="gpt-4-turbo-preview",  # Using specific version for consistent behavior
+                model="gpt-4-turbo",
                 messages=[
                     {
                         "role": "system",
